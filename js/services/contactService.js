@@ -1,4 +1,5 @@
-const WHATSAPP_NUMBER = "5519997780846";
+const WHATSAPP_NUMBER = "5511966230194";
+
 
 export function initializeContact() {
 

@@ -8,7 +8,7 @@ export function renderFooter() {
             <div class="container footer__content">
 
                 <div>
-                    <h2>Nome do negócio</h2>
+                    <h2>Máximo Motorsport</h2>
 
                     <p>
                         Qualidade e confiança.
@@ -19,8 +19,7 @@ export function renderFooter() {
                     <h3>Contato</h3>
 
                     <p>
-                        (19) 99778
-                        0846
+                         +55 (11) 96623-0194
                     </p>
                 </div>
 
