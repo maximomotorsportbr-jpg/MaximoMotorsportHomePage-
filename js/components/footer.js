@@ -26,7 +26,7 @@ export function renderFooter() {
             </div>
 
             <div class="footer__copyright">
-                © 2026 Nome do negócio
+                © 2026 Máximo Motorsport
             </div>
 
         </div>
