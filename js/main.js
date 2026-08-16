@@ -16,16 +16,3 @@ document.addEventListener(
     "DOMContentLoaded",
     initializeApplication
 );
-
-    function abrirImagem(imagem) {
-        const modal = document.getElementById("modalImagem");
-        const imagemAmpliada = document.getElementById("imagemAmpliada");
-
-        imagemAmpliada.src = imagem.src;
-
-        modal.style.display = "flex";
-    }
-
-    function fecharImagem() {
-        document.getElementById("modalImagem").style.display = "none";
-    }
