@@ -42,3 +42,9 @@ document.addEventListener("keydown", function (event) {
     fecharImagem();
   }
 });
+
+
+//teste 
+document.querySelectorAll('img').forEach(img => {
+    img.loading = 'lazy';
+});
