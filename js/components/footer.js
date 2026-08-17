@@ -1,11 +1,24 @@
 export function renderFooter() {
-
     const footer = document.querySelector("#footer");
 
     footer.innerHTML = `
         <div class="footer">
 
             <div class="container footer__content">
+
+            <div>
+                <h3>Contato</h3>
+
+                    <p>
+                         +55 (11) 96623-0194
+                    </p>
+                    <p>
+                         maximomotorsportbr@gmail.com
+                    </p>
+                    <p>
+                         Piracicaba - SP
+                    </p>
+                </div>
 
                 <div>
                     <h2>Máximo Motorsport</h2>
@@ -15,16 +28,7 @@ export function renderFooter() {
                     </p>
                 </div>
 
-                <div>
-                    <h3>Contato</h3>
-
-                    <p>
-                         +55 (11) 96623-0194
-                    </p>
-                    <p>
-                         maximomotorsportbr@gmail.com
-                    </p>
-                </div>
+                
 
             </div>
 

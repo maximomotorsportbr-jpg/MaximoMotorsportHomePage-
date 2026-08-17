@@ -4,10 +4,10 @@ import { initializeNavbar } from "./components/navbar.js";
 import { initializeContact } from "./services/contactService.js";
 
 function initializeApplication() {
-  renderHeader();
+  //renderHeader();
   renderFooter();
 
-  initializeNavbar();
+  //initializeNavbar();
   initializeContact();
 }
 

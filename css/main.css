@@ -715,7 +715,8 @@ section h2 {
     }
 
     section {
-        padding: 60px 0;
+        padding-bottom: 12.5;
+        padding-top: 12.5;
     }
 
     section h2 {
