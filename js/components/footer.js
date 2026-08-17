@@ -21,6 +21,9 @@ export function renderFooter() {
                     <p>
                          +55 (11) 96623-0194
                     </p>
+                    <p>
+                         maximomotorsportbr@gmail.com
+                    </p>
                 </div>
 
             </div>
