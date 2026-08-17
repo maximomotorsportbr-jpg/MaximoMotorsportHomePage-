@@ -14,6 +14,9 @@ function initializeApplication() {
 document.addEventListener("DOMContentLoaded", initializeApplication);
 
 const imagens = document.querySelectorAll("section img");
+const botaoFechar = document.getElementById("fecharModal");
+
+botaoFechar.addEventListener("click", fecharImagem);
 
 imagens.forEach((imagem) => {
   imagem.addEventListener("click", () => {
