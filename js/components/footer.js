@@ -6,18 +6,12 @@ export function renderFooter() {
 
             <div class="container footer__content">
 
-            <div>
-                <h3>Contato</h3>
+                <div>
+                    <h3>Contato</h3>
 
-                    <p>
-                         +55 (11) 96623-0194
-                    </p>
-                    <p>
-                         maximomotorsportbr@gmail.com
-                    </p>
-                    <p>
-                         Piracicaba - SP
-                    </p>
+                    <p>+55 (11) 96623-0194</p>
+                    <p>maximomotorsportbr@gmail.com</p>
+                    <p>Piracicaba - SP</p>
                 </div>
 
                 <div>
@@ -28,12 +22,20 @@ export function renderFooter() {
                     </p>
                 </div>
 
-                
-
             </div>
 
-            <div class="footer__copyright">
-                © 2026 Máximo Motorsport
+            <div class="footer__bottom">
+
+                <div class="footer__copyright">
+                    © ${new Date().getFullYear()} Máximo Motorsport · Desenvolvido por
+                    <a
+                        href="https://www.linkedin.com/in/gabriel-sampaio0122/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Gabriel Sampaio
+                    </a>
+                </div>
+
             </div>
 
         </div>
