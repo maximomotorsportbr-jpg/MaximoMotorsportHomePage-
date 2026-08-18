@@ -402,40 +402,6 @@ h2,
 }
 
 /* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-    .servicos-container {
-        mask-image: linear-gradient(
-            to right,
-            transparent 0%,
-            black 8%,
-            black 92%,
-            transparent 100%
-        );
-
-        -webkit-mask-image: linear-gradient(
-            to right,
-            transparent 0%,
-            black 8%,
-            black 92%,
-            transparent 100%
-        );
-    }
-
-    .metallic-card {
-        flex-basis: 280px;
-    }
-
-    .carousel {
-        animation-duration: 20s;
-    }
-}
-
-
-/* =========================================================
    ACESSIBILIDADE
    ========================================================= */
 
@@ -778,27 +744,33 @@ section h2 {
 /* =========================================================
    RESPONSIVIDADE
    ========================================================= */
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
 
 @media (max-width: 768px) {
 
+    /* Container */
     .container {
-        width: min(calc(100% - 30px),
-                600px);
+        width: min(calc(100% - 30px), 600px);
     }
 
+    /* Navbar */
     .navbar__links {
         display: none;
     }
 
+    /* Seções */
     section {
-        padding-bottom: 12.5;
-        padding-top: 12.5;
+        padding-bottom: 12.5px;
+        padding-top: 12.5px;
     }
 
     section h2 {
         font-size: 26px;
     }
 
+    /* Hero */
     .hero {
         min-height: 500px;
     }
@@ -816,6 +788,7 @@ section h2 {
         letter-spacing: 1.5px;
     }
 
+    /* Galeria */
     .galeria-grid {
         grid-template-columns: 1fr;
     }
@@ -824,6 +797,34 @@ section h2 {
         height: 250px;
     }
 
+    /* Carrossel */
+    .servicos-container {
+        mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            black 8%,
+            black 92%,
+            transparent 100%
+        );
+
+        -webkit-mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            black 8%,
+            black 92%,
+            transparent 100%
+        );
+    }
+
+    .metallic-card {
+        flex-basis: 280px;
+    }
+
+    .carousel {
+        animation-duration: 20s;
+    }
+
+    /* Footer */
     .footer__content {
         flex-direction: column;
         gap: 20px;
