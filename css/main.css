@@ -439,11 +439,11 @@ h2,
    ACESSIBILIDADE
    ========================================================= */
 
-@media (prefers-reduced-motion: reduce) {
+/*@media (prefers-reduced-motion: reduce) {
     .carousel {
         animation: none;
     }
-}
+}*/
 
 
 /* =========================================================
