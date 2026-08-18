@@ -294,6 +294,29 @@ h2,
     display: block;
 }
 
+#ContainerMain .metallic-card {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+#ContainerMain .metallic-card > div:first-child {
+    flex: 1;
+}
+
+#ContainerMain .metallic-card > div:last-child {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+#ContainerMain .imagem-destaque {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
 /* =========================================================
    CARDS
    ========================================================= */
@@ -301,7 +324,7 @@ h2,
 .metallic-card {
     padding: 24px;
     margin-top: 10px;
-
+    
     color: var(--color-text);
 
     background:
@@ -820,6 +843,16 @@ section h2 {
         flex-basis: 280px;
     }
 
+    #ContainerMain .metallic-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 25px;
+}
+
+#ContainerMain .imagem-destaque {
+    max-width: 100%;
+}
+
     .carousel {
         animation-duration: 20s;
     }
@@ -830,3 +863,4 @@ section h2 {
         gap: 20px;
     }
 }
+
