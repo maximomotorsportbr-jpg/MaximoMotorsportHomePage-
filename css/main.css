@@ -294,23 +294,23 @@ h2,
     display: block;
 }
 
-#ContainerMain .metallic-card {
+#container-main .metallic-card {
     display: flex;
     align-items: center;
     gap: 1em;
 }
 
-#ContainerMain .metallic-card > div:first-child {
+#container-main .metallic-card > div:first-child {
     flex: 1;
 }
 
-#ContainerMain .metallic-card > div:last-child {
+#container-main .metallic-card > div:last-child {
     flex: 1;
     display: flex;
     justify-content: center;
 }
 
-#ContainerMain .imagem-destaque {
+#container-main .imagem-destaque {
     width: 100%;
     max-width: 450px;
     height: auto;
@@ -843,13 +843,13 @@ section h2 {
         flex-basis: 280px;
     }
 
-    #ContainerMain .metallic-card {
+    #container-main .metallic-card {
     flex-direction: column;
     align-items: stretch;
     gap: 25px;
 }
 
-#ContainerMain .imagem-destaque {
+#container-main .imagem-destaque {
     max-width: 100%;
 }
 
