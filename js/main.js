@@ -4,14 +4,20 @@ import { initializeNavbar } from "./components/navbar.js";
 import { initializeContact } from "./services/contactService.js";
 
 function initializeApplication() {
-  //renderHeader();
+  renderHeader();
   renderFooter();
+
+  initializeTheme();
 
   //initializeNavbar();
   initializeContact();
 }
 
 document.addEventListener("DOMContentLoaded", initializeApplication);
+
+// ==============================
+// MODAL DE IMAGENS
+// ==============================
 
 const imagens = document.querySelectorAll("section img");
 const botaoFechar = document.getElementById("fecharModal");
@@ -43,8 +49,38 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
+// ==============================
+// LAZY LOADING
+// ==============================
 
-//teste 
-document.querySelectorAll('img').forEach(img => {
-    img.loading = 'lazy';
+document.querySelectorAll("img").forEach((img) => {
+  img.loading = "lazy";
 });
+
+// ==============================
+// THEME
+// ==============================
+function initializeTheme() {
+  const themeToggle = document.querySelector("#theme-toggle");
+  const themeOptions = document.querySelectorAll(".theme-option");
+
+  themeOptions.forEach((option) => {
+    option.addEventListener("click", () => {
+      const selectedTheme = option.dataset.theme;
+
+      // Remove destaque das opções
+      themeOptions.forEach((item) => {
+        item.classList.remove("active");
+      });
+
+      // Destaca a opção selecionada
+      option.classList.add("active");
+
+      // Move o slider
+      themeToggle.classList.toggle("light", selectedTheme === "light");
+
+      // Altera o tema da página
+      document.documentElement.dataset.theme = selectedTheme;
+    });
+  });
+}

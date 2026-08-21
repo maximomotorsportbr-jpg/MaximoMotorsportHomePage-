@@ -1,8 +1,7 @@
 export function renderHeader() {
+  const header = document.querySelector("#header");
 
-    const header = document.querySelector("#header");
-
-    header.innerHTML = `
+  header.innerHTML = `
         <nav class="navbar">
 
             <div class="container navbar__content">
@@ -19,6 +18,22 @@ export function renderHeader() {
 
                     <li>
                         <a href="#contato">Contato</a>
+                    </li>
+
+                    <li>
+                        <div class="theme-toggle" id="theme-toggle">
+
+                            <button class="theme-option" data-theme="dark">
+                                ☾ Dark
+                            </button>
+
+                            <button class="theme-option" data-theme="light">
+                                ☀ White
+                            </button>
+
+                            <span class="theme-slider"></span>
+
+                        </div>
                     </li>
 
                 </ul>
