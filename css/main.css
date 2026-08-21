@@ -240,7 +240,7 @@ h2,
   justify-content: center;
   align-items: center;
 
-  gap: 28px;
+  gap: 1em;
 
   list-style: none;
 }
