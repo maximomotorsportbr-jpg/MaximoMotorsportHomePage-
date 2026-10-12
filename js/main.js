@@ -257,8 +257,15 @@ function buildFooter() {
       </div>
 
       <p class="footer__copyright">
-        © ${new Date().getFullYear()} Máximo Motorsport. <span data-i18n="footer.rights"></span>
+        © ${new Date().getFullYear()} Máximo Motorsport <span data-i18n="footer.rights"></span>
+         <a
+           href="https://www.linkedin.com/in/gabriel-sampaio0122/"
+            target="_blank"
+            rel="noopener noreferrer">
+              <span data-i18n="footer.dev">
+          </a>
       </p>
+      
     </div>`;
 }
 

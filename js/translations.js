@@ -87,6 +87,7 @@ export const translations = {
     "footer.navTitle": "Navegação",
     "footer.contactTitle": "Contato",
     "footer.rights": "Todos os direitos reservados.",
+    "footer.dev": "Desenvolvido por Gabriel Sampaio"
   },
 
   en: {
@@ -176,6 +177,7 @@ export const translations = {
     "footer.navTitle": "Navigation",
     "footer.contactTitle": "Contact",
     "footer.rights": "All rights reserved.",
+    "footer.dev": "Developed by Gabriel Sampaio"
   },
 };
 
