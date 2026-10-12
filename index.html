@@ -1,255 +1,238 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 
 <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d0d0d" />
 
-    <meta name="description"
-        content="Máximo Motorsport — manutenção, preparação e projetos automotivos personalizados, com experiência em automobilismo e alta performance." />
-
-    <meta name="author" content="Máximo Motorsport" />
+    <!-- Aplica tema e idioma salvos ANTES de pintar a página (evita piscar claro/escuro) -->
+    <script>
+        try {
+            var t = localStorage.getItem("mm-theme");
+            if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+            if (localStorage.getItem("mm-lang") === "en") document.documentElement.lang = "en";
+        } catch (e) { }
+    </script>
 
     <title>Máximo Motorsport | Preparação e Manutenção Automotiva</title>
 
+    <meta name="description" data-i18n-content="meta.description"
+        content="Máximo Motorsport — manutenção, preparação e projetos automotivos personalizados, com experiência em automobilismo e alta performance." />
+    <meta name="author" content="Máximo Motorsport" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Máximo Motorsport | Preparação e Manutenção Automotiva" />
+    <!-- <link rel="canonical" href="https://www.seudominio.com.br/" /> -->
 
-    <meta property="og:description"
+    <!-- Open Graph / redes sociais -->
+    <meta property="og:title" data-i18n-content="meta.title"
+        content="Máximo Motorsport | Preparação e Manutenção Automotiva" />
+    <meta property="og:description" data-i18n-content="meta.ogDescription"
         content="Manutenção, preparação e projetos automotivos personalizados, com experiência em automobilismo e alta performance." />
-
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:site_name" content="Máximo Motorsport" />
+    <meta property="og:image" content="assets/img/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-    <meta property="og:image" content="assets/utv/3.webp" />
+    <!-- Ícones (a logo vetorizada) -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
 
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="/assets/icon/roda-de-carro.png" />
-
+    <!-- Fontes: só os pesos usados -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
 
     <!-- CSS -->
     <link rel="stylesheet" href="./css/main.css" />
 
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet" />
-
-
-    <!-- JavaScript -->
+    <!-- JavaScript (type="module" já é adiado automaticamente) -->
     <script type="module" src="./js/main.js"></script>
-
 </head>
 
 <body>
 
+    <a class="skip-link" href="#main" data-i18n="ui.skip">Pular para o conteúdo</a>
+
+    <!-- Preenchido por js/main.js -->
     <header id="header"></header>
 
-    <main>
+    <main id="main">
 
-        <section id="hero" class="hero">
+        <!-- ================= HERO ================= -->
+        <section id="hero" class="hero" aria-labelledby="hero-titulo">
 
-            <video class="hero-background" autoplay muted loop playsinline webkit-playsinline preload="auto">
-                <source src="assets/video/2-web-mobile.mp4" type="video/mp4">
+            <!-- Vídeo decorativo: escondido de leitores de tela -->
+            <video class="hero-background" autoplay muted loop playsinline preload="metadata" aria-hidden="true"
+                tabindex="-1">
+                <source src="assets/video/2-web-mobile.mp4" type="video/mp4" />
             </video>
 
-
-            <div class="container">
+            <div class="container hero-grid">
                 <div class="metallic-card">
-                    <h3>Especializada em UTVs</h3>
-                    <h1>Máximo Motorsport</h1>
+                    <p class="hero-eyebrow" data-i18n="hero.eyebrow">Especializada em UTVs</p>
+                    <h1 id="hero-titulo">Máximo Motorsport</h1>
 
-                    <p class="hero-subtitle">CONSERTO • MANUTENÇÃO • PREPARAÇÃO</p>
+                    <p class="hero-subtitle" data-i18n="hero.subtitle">CONSERTO • MANUTENÇÃO • PREPARAÇÃO</p>
 
-                    <p>
+                    <p data-i18n="hero.text">
                         Soluções automotivas desenvolvidas para quem busca desempenho,
                         confiabilidade e acabamento de alto nível.
                     </p>
 
                     <div>
-                        <a href="#servicos" class="metallic-button">
-                            Conheça nossos serviços
-                        </a>
+                        <a href="#servicos" class="metallic-button" data-i18n="hero.ctaServices">Conheça nossos
+                            serviços</a>
 
-                        <a href="#contato" class="metallic-button"> Entre em contato </a>
+                        <a href="#contato" class="metallic-button" data-i18n="hero.ctaContact">Entre em contato</a>
 
-                        <a class="instagram-button metallic-button" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/icon/instagram.svg" alt="Instagram" />
+                        <!-- Os href de Instagram/WhatsApp são definidos em js/main.js (CONFIG) -->
+                        <a href="#" class="instagram-button metallic-button" target="_blank"
+                            rel="noopener noreferrer">
+                            <img src="assets/icon/instagram.svg" alt="" width="16" height="16" />
                             Instagram
                         </a>
 
-                        <a class=" whatsapp-button metallic-button" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/icon/whatsapp.svg" alt="Instagram" />
+                        <a href="#" class="whatsapp-button metallic-button" target="_blank"
+                            rel="noopener noreferrer">
+                            <img src="assets/icon/whatsapp.svg" alt="" width="16" height="16" />
                             WhatsApp
                         </a>
-
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="sobre">
-            <div class="container ">
+        <!-- ================= SOBRE ================= -->
+        <section id="sobre" aria-labelledby="sobre-titulo">
+            <div class="container">
                 <div id="container-main" class="container-wrapper">
                     <div class="metallic-card">
                         <div class="sobre-texto">
-                            <h2>Sobre nós</h2>
+                            <h2 id="sobre-titulo" data-i18n="about.title">Sobre nós</h2>
 
-                            <p>
+                            <p data-i18n="about.p1">
                                 A Máximo Motorsport nasceu da experiência prática no automobilismo e da paixão por
-                                veículos
-                                de
-                                alta performance.
+                                veículos de alta performance.
                             </p>
 
-                            <p>
+                            <p data-i18n="about.p2">
                                 Atuamos com manutenção especializada, preparação, desenvolvimento e projetos mecânicos
                                 personalizados, buscando oferecer soluções técnicas de acordo com a necessidade de cada
-                                veículo
-                                e cliente.
+                                veículo e cliente.
                             </p>
 
-                            <p>
+                            <p data-i18n="about.p3">
                                 Nosso trabalho une experiência de competição, conhecimento mecânico e atenção aos
-                                detalhes
-                                para
-                                entregar desempenho, confiabilidade e segurança.
+                                detalhes para entregar desempenho, confiabilidade e segurança.
                             </p>
 
-                            <p>+10 anos de experiência no automobilismo, com atuação em provas de Baja, Rally dos
-                                Sertões,
-                                Rally
-                                de Regularidade, Velocidade na Terra, Stock Car, Fórmula 4, Porsche Cup, entre outras
-                                categorias.</p>
+                            <p data-i18n="about.p4">
+                                +10 anos de experiência no automobilismo, com atuação em provas de Baja, Rally dos
+                                Sertões, Rally de Regularidade, Velocidade na Terra, Stock Car, Fórmula 4, Porsche Cup,
+                                entre outras categorias.
+                            </p>
                         </div>
-
 
                         <div class="sobre-video">
                             <video controls playsinline preload="metadata" poster="assets/img/video-poster.jpg">
-                                <source src="assets/video/video.webm" type="video/webm">
-                                Seu navegador não suporta a reprodução de vídeos.
+                                <source src="assets/video/video.webm" type="video/webm" />
+                                <span data-i18n="about.videoFallback">Seu navegador não suporta a reprodução de
+                                    vídeos.</span>
                             </video>
                         </div>
-
-
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <section id="galeria-utv">
+        <!-- ================= GALERIA UTV ================= -->
+        <section id="galeria-utv" aria-labelledby="utv-titulo">
             <div class="container">
-                <h2>UTVs</h2>
+                <h2 id="utv-titulo" data-i18n="gallery.utvTitle">UTVs</h2>
 
-                <p>
-                    Confira alguns exemplos de projetos realizados pela nossa equipe.
-                </p>
+                <p data-i18n="gallery.intro">Confira alguns exemplos de projetos realizados pela nossa equipe.</p>
 
                 <div class="galeria-grid">
-                    <img src="assets/utv/1.webp" alt="Projeto automotivo 1" />
-
-                    <img src="assets/utv/2.webp" alt="Projeto automotivo 2" />
-
-                    <img src="assets/utv/9.webp" alt="Projeto automotivo 3" />
-
-                    <img src="assets/utv/4.webp" alt="Projeto automotivo 4" />
-
-                    <img src="assets/utv/5.webp" alt="Projeto automotivo 5" />
-
-                    <img src="assets/utv/10.webp" alt="Projeto automotivo 10" />
-
-                    <img src="assets/utv/11.webp" alt="Projeto automotivo 11" />
-
+                    <img src="assets/utv/1.webp" data-n="1" data-i18n-alt="gallery.utvAlt"
+                        alt="UTV preparada pela Máximo Motorsport — projeto 1" loading="lazy" decoding="async" />
+                    <img src="assets/utv/2.webp" data-n="2" data-i18n-alt="gallery.utvAlt"
+                        alt="UTV preparada pela Máximo Motorsport — projeto 2" loading="lazy" decoding="async" />
+                    <img src="assets/utv/9.webp" data-n="3" data-i18n-alt="gallery.utvAlt"
+                        alt="UTV preparada pela Máximo Motorsport — projeto 3" loading="lazy" decoding="async" />
+                    <img src="assets/utv/4.webp" data-n="4" data-i18n-alt="gallery.utvAlt"
+                        alt="UTV preparada pela Máximo Motorsport — projeto 4" loading="lazy" decoding="async" />
+                    <img src="assets/utv/5.webp" data-n="5" data-i18n-alt="gallery.utvAlt"
+                        alt="UTV preparada pela Máximo Motorsport — projeto 5" loading="lazy" decoding="async" />
+                    <img src="assets/utv/10.webp" data-n="6" data-i18n-alt="gallery.utvAlt"
+                        alt="UTV preparada pela Máximo Motorsport — projeto 6" loading="lazy" decoding="async" />
+                    <img src="assets/utv/11.webp" data-n="7" data-i18n-alt="gallery.utvAlt"
+                        alt="UTV preparada pela Máximo Motorsport — projeto 7" loading="lazy" decoding="async" />
                 </div>
             </div>
         </section>
-        <section id="galeria-veiculos">
-            <div class="container">
-                <h2>Veículos de alta performance</h2>
 
-                <p>
-                    Confira alguns exemplos de projetos realizados pela nossa equipe.
-                </p>
+        <!-- ================= GALERIA VEÍCULOS ================= -->
+        <section id="galeria-veiculos" aria-labelledby="veiculos-titulo">
+            <div class="container">
+                <h2 id="veiculos-titulo" data-i18n="gallery.vehiclesTitle">Veículos de alta performance</h2>
+
+                <p data-i18n="gallery.intro">Confira alguns exemplos de projetos realizados pela nossa equipe.</p>
 
                 <div class="galeria-grid">
-                    <img src="assets/veiculos/1.webp" alt="Projeto automotivo 1" />
-
-                    <img src="assets/veiculos/2.webp" alt="Projeto automotivo 2" />
-
-                    <img src="assets/veiculos/4.webp" alt="Projeto automotivo 2" />
-
-                    <img src="assets/veiculos/3.webp" alt="Projeto automotivo 2" />
-
-                    <img src="assets/veiculos/5.webp" alt="Projeto automotivo 2" />
-
+                    <img src="assets/veiculos/1.webp" data-n="1" data-i18n-alt="gallery.vehiclesAlt"
+                        alt="Veículo de alta performance — projeto 1" loading="lazy" decoding="async" />
+                    <img src="assets/veiculos/2.webp" data-n="2" data-i18n-alt="gallery.vehiclesAlt"
+                        alt="Veículo de alta performance — projeto 2" loading="lazy" decoding="async" />
+                    <img src="assets/veiculos/4.webp" data-n="3" data-i18n-alt="gallery.vehiclesAlt"
+                        alt="Veículo de alta performance — projeto 3" loading="lazy" decoding="async" />
+                    <img src="assets/veiculos/3.webp" data-n="4" data-i18n-alt="gallery.vehiclesAlt"
+                        alt="Veículo de alta performance — projeto 4" loading="lazy" decoding="async" />
+                    <img src="assets/veiculos/5.webp" data-n="5" data-i18n-alt="gallery.vehiclesAlt"
+                        alt="Veículo de alta performance — projeto 5" loading="lazy" decoding="async" />
                 </div>
             </div>
         </section>
 
-        <section id="servicos">
+        <!-- ================= SERVIÇOS ================= -->
+        <section id="servicos" aria-labelledby="servicos-titulo">
             <div class="container">
-                <h2>Nossos serviços</h2>
+                <h2 id="servicos-titulo" data-i18n="services.title">Nossos serviços</h2>
 
-                <p>
+                <p data-i18n="services.intro">
                     Trabalhamos com diferentes soluções para personalização, manutenção e preparação automotiva.
                 </p>
 
+                <!-- O js/main.js duplica o grupo automaticamente para criar o loop infinito -->
                 <div class="servicos-container">
                     <div class="carousel">
                         <div class="group">
                             <article class="metallic-card">
-                                <h3>Preparação</h3>
-                                <p>
+                                <h3 data-i18n="services.prep.title">Preparação</h3>
+                                <p data-i18n="services.prep.text">
                                     Projetos voltados para melhoria de desempenho, resposta e dirigibilidade do veículo.
                                 </p>
                             </article>
 
                             <article class="metallic-card">
-                                <h3>Manutenção Preventiva</h3>
-                                <p>
+                                <h3 data-i18n="services.maint.title">Manutenção Preventiva</h3>
+                                <p data-i18n="services.maint.text">
                                     Manutenção preventiva e corretiva com atenção aos detalhes e utilização de
                                     componentes de qualidade.
                                 </p>
                             </article>
 
                             <article class="metallic-card">
-                                <h3>Conserto</h3>
-                                <p>
-                                    Correção de falhas e problemas mecânicos identificados no veículo.
-                                </p>
-                            </article>
-                        </div>
-
-                        <!-- Cópia para criar o loop -->
-                        <div class="group" aria-hidden="true">
-                            <article class="metallic-card">
-                                <h3>Preparação</h3>
-                                <p>
-                                    Projetos voltados para melhoria de desempenho, resposta e dirigibilidade do veículo.
-                                </p>
-                            </article>
-
-                            <article class="metallic-card">
-                                <h3>Manutenção Preventiva</h3>
-                                <p>
-                                    Manutenção preventiva e corretiva com atenção aos detalhes e utilização de
-                                    componentes de qualidade.
-                                </p>
-                            </article>
-
-                            <article class="metallic-card">
-                                <h3>Conserto</h3>
-                                <p>
-                                    Correção de falhas e problemas mecânicos identificados no veículo.
-                                </p>
+                                <h3 data-i18n="services.repair.title">Conserto</h3>
+                                <p data-i18n="services.repair.text">Correção de falhas e problemas mecânicos
+                                    identificados no veículo.</p>
                             </article>
                         </div>
                     </div>
@@ -257,106 +240,57 @@
             </div>
         </section>
 
-        <section id="diferenciais">
+        <!-- ================= DIFERENCIAIS ================= -->
+        <section id="diferenciais" aria-labelledby="diferenciais-titulo">
             <div class="container">
-                <h2>Por que escolher a Máximo?</h2>
+                <h2 id="diferenciais-titulo" data-i18n="why.title">Por que escolher a Máximo?</h2>
 
                 <div class="servicos-container">
                     <div class="carousel">
                         <div class="group">
                             <article class="metallic-card">
-                                <h3>Experiência</h3>
-
-                                <p>
-                                    Anos de experiência e conhecimento técnico aplicados em cada
-                                    projeto.
-                                </p>
+                                <h3 data-i18n="why.exp.title">Experiência</h3>
+                                <p data-i18n="why.exp.text">Anos de experiência e conhecimento técnico aplicados em
+                                    cada projeto.</p>
                             </article>
 
                             <article class="metallic-card">
-                                <h3>Qualidade</h3>
-
-                                <p>
-                                    Trabalhamos com atenção aos detalhes para entregar resultados
-                                    consistentes.
-                                </p>
+                                <h3 data-i18n="why.quality.title">Qualidade</h3>
+                                <p data-i18n="why.quality.text">Trabalhamos com atenção aos detalhes para entregar
+                                    resultados consistentes.</p>
                             </article>
 
                             <article class="metallic-card">
-                                <h3>Atendimento</h3>
-
-                                <p>
-                                    Atendimento próximo e transparente durante todas as etapas do
-                                    projeto.
-                                </p>
+                                <h3 data-i18n="why.service.title">Atendimento</h3>
+                                <p data-i18n="why.service.text">Atendimento próximo e transparente durante todas as
+                                    etapas do projeto.</p>
                             </article>
 
                             <article class="metallic-card">
-                                <h3>Personalização</h3>
-
-                                <p>
-                                    Cada projeto é desenvolvido de acordo com as necessidades de
-                                    cada cliente.
-                                </p>
-                            </article>
-
-                        </div>
-                        <div class="group" aria-hidden="true">
-                            <article class="metallic-card">
-                                <h3>Experiência</h3>
-
-                                <p>
-                                    Anos de experiência e conhecimento técnico aplicados em cada
-                                    projeto.
-                                </p>
-                            </article>
-
-                            <article class="metallic-card">
-                                <h3>Qualidade</h3>
-
-                                <p>
-                                    Trabalhamos com atenção aos detalhes para entregar resultados
-                                    consistentes.
-                                </p>
-                            </article>
-
-                            <article class="metallic-card">
-                                <h3>Atendimento</h3>
-
-                                <p>
-                                    Atendimento próximo e transparente durante todas as etapas do
-                                    projeto.
-                                </p>
-                            </article>
-
-                            <article class="metallic-card">
-                                <h3>Personalização</h3>
-
-                                <p>
-                                    Cada projeto é desenvolvido de acordo com as necessidades de
-                                    cada cliente.
-                                </p>
+                                <h3 data-i18n="why.custom.title">Personalização</h3>
+                                <p data-i18n="why.custom.text">Cada projeto é desenvolvido de acordo com as
+                                    necessidades de cada cliente.</p>
                             </article>
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <section id="contato">
+        <!-- ================= CONTATO ================= -->
+        <section id="contato" aria-labelledby="contato-titulo">
             <div class="container">
                 <div class="metallic-card">
-                    <h2>Vamos conversar?</h2>
+                    <h2 id="contato-titulo" data-i18n="contact.title">Vamos conversar?</h2>
 
-                    <p>
+                    <p data-i18n="contact.text">
                         Tem um projeto em mente? Entre em contato com nossa equipe
                         e descubra como podemos ajudar.
                     </p>
 
                     <div class="contato-botoes">
                         <a href="#" class="contact-button whatsapp-button metallic-button" target="_blank"
-                            rel="noopener noreferrer">
+                            rel="noopener noreferrer" data-i18n="contact.whatsapp">
                             Solicitar orçamento pelo WhatsApp
                         </a>
 
@@ -365,7 +299,9 @@
                             Instagram
                         </a>
 
-                        <a href="mailto:seuemail@email.com" class="contact-button email-button metallic-button">
+                        <!-- TODO: defina o e-mail em js/main.js (CONFIG.email); este é só um placeholder -->
+                        <a href="mailto:seuemail@email.com" class="contact-button email-button metallic-button"
+                            data-i18n="contact.email">
                             E-mail
                         </a>
                     </div>
@@ -374,13 +310,15 @@
         </section>
     </main>
 
+    <!-- Preenchido por js/main.js -->
     <footer id="footer"></footer>
-    <div id="modalImagem" class="modal-imagem">
 
-        <span id="fecharModal" class="fechar">&times;</span>
-
-        <img id="imagemAmpliada" src="" alt="Imagem ampliada">
-
+    <!-- Modal de imagem ampliada -->
+    <div id="modalImagem" class="modal-imagem" role="dialog" aria-modal="true" data-i18n-aria-label="modal.label"
+        aria-label="Imagem ampliada">
+        <span id="fecharModal" class="fechar" role="button" tabindex="0" data-i18n-aria-label="modal.close"
+            aria-label="Fechar imagem">&times;</span>
+        <img id="imagemAmpliada" src="" alt="Imagem ampliada" />
     </div>
 
 </body>
