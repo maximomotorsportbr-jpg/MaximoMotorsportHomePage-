@@ -1,4 +1,4 @@
-import { translations, SUPPORTED_LANGS, DEFAULT_LANG } from "./translations.js";
+import { translations, SUPPORTED_LANGS, DEFAULT_LANG, LANGUAGE_OPTIONS } from "./translations.js";
 import { createDropdown } from "./dropdown.js";
 
 /* =========================================================
@@ -159,10 +159,7 @@ function buildHeader() {
     labelKey: "ui.language",
     icon: ICON_GLOBE,
     value: state.lang,
-    options: [
-      { value: "pt", label: "Português", short: "PT" },
-      { value: "en", label: "English", short: "EN" },
-    ],
+    options: LANGUAGE_OPTIONS,
     onChange: setLang,
   });
 
