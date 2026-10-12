@@ -7,7 +7,7 @@ import { createDropdown } from "./dropdown.js";
 
 const CONFIG = {
   instagramUrl: "https://www.instagram.com/maximomotorsportbr/",
-  instagramHandle: "@maximomotorsportbr",
+  instagramHandle: "",
   whatsappNumber: "5511966230194",
   email: "maximomotorsportbr@gmail.com",
 };
