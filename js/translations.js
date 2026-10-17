@@ -74,7 +74,7 @@ export const translations = {
     "contact.title": "Vamos conversar?",
     "contact.text":
       "Tem um projeto em mente? Entre em contato com nossa equipe e descubra como podemos ajudar.",
-    "contact.whatsapp": "Solicitar orçamento pelo WhatsApp",
+    "contact.whatsapp": "WhatsApp",
     "contact.email": "E-mail",
     "contact.whatsappMessage":
       "Olá! Vim pelo site da Máximo Motorsport e gostaria de um orçamento.",

@@ -131,7 +131,7 @@
   --color-text-secondary: #454545;
   --color-text-muted: #6b6b6b; /* contraste melhorado (AA) */
 
-  --color-border: #dedede;
+  --color-border: #CACACA;
   --color-border-hover: #b4b4b4;
 
   --color-accent: #b52c2c;
@@ -1172,6 +1172,51 @@ section h2 {
     gap: 25px;
   }
 
+
+  .contact-banner {
+    min-height: 300px;
+  }
+
+  .contact-banner__media {
+    inset: 0;
+    height: 100%;
+
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.15) 35%,
+      #000 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.15) 35%,
+      #000 100%
+    );
+  }
+
+  .contact-banner__content {
+    width: 75%;
+    max-width: none;
+    padding: 24px 20px;
+  }
+
+  :root[data-theme="light"] .contact-banner__media {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.1) 40%,
+      #000 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.1) 40%,
+      #000 100%
+    );
+  }
+
+
 }
 
 /* Telas bem estreitas: some o texto ao lado do emblema (continua acessível) */
@@ -1280,3 +1325,131 @@ section h2 {
     padding-top: 0;
   }
 }
+        
+
+/*teste
+
+*/
+.contact-banner__media {
+  position: relative;
+    min-height: 260px;
+}
+
+.contact-banner__media img {
+    position: absolute;
+  inset: 0;
+    width: 100%;
+  height: 100%;
+    object-fit: cover;
+  object-position: right center;
+}
+
+
+
+/*testet*/
+/* =========================================================
+   BANNER DE CONTATO — BACKGROUND INTEGRADO
+   ========================================================= */
+
+.contact-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+  overflow: hidden;
+
+  width: 100%;
+  min-height: 320px;
+  padding: 0;
+
+  /* Usa o fundo normal do card */
+  background: var(--color-background-secondary, #151515);
+}
+
+/* Imagem ocupa todo o banner */
+.contact-banner__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  pointer-events: none;
+
+  /* O lado esquerdo fica livre para o texto */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 20%,
+    rgba(0, 0, 0, 0.2) 38%,
+    #000 72%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 20%,
+    rgba(0, 0, 0, 0.2) 38%,
+    #000 72%
+  );
+}
+
+.contact-banner__media img {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: right center;
+}
+
+/* Texto sempre acima da imagem */
+.contact-banner__content {
+  position: relative;
+  z-index: 1;
+
+  box-sizing: border-box;
+  width: 58%;
+  max-width: 650px;
+  padding: clamp(24px, 4vw, 48px);
+
+  color: var(--color-text, #fff);
+}
+
+.contact-banner__content p {
+  max-width: 46ch;
+}
+
+/* =========================================================
+   TEMA CLARO
+   O fundo fica branco e a imagem não escurece o texto.
+   ========================================================= */
+
+:root[data-theme="light"] .contact-banner {
+  background: var(--color-background-secondary, #fff);
+}
+
+:root[data-theme="light"] .contact-banner__media {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 35%,
+    rgba(0, 0, 0, 0.15) 55%,
+    #000 82%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 35%,
+    rgba(0, 0, 0, 0.15) 55%,
+    #000 82%
+  );
+}
+
+:root[data-theme="light"] .contact-banner__content {
+  color: var(--color-text, #111);
+}
+
