@@ -26,6 +26,17 @@ export const translations = {
     "hero.ctaServices": "Conheça nossos serviços",
     "hero.ctaContact": "Entre em contato",
 
+    "contact.cardLabel": "FALE COM A EQUIPE",
+    "contact.backToFront": "Voltar à apresentação",
+    "contact.address": "Endereço",
+    "contact.addressDescription": "Como chegar à oficina",
+    "contact.whatsapp": "WhatsApp",
+    "contact.whatsappDescription": "Solicite um orçamento",
+    "contact.instagram": "Instagram",
+    "contact.instagramDescription": "Projetos e bastidores",
+    "contact.email": "E-mail",
+    "contact.emailDescription": "Contato profissional",
+
     "about.title": "Sobre nós",
     "about.p1":
       "A Máximo Motorsport nasceu da experiência prática no automobilismo e da paixão por veículos de alta performance.",
@@ -83,11 +94,12 @@ export const translations = {
     "modal.close": "Fechar imagem",
     "modal.alt": "Imagem ampliada",
 
-    "footer.tagline": "Conserto, manutenção e preparação de UTVs e veículos de alta performance.",
+    "footer.tagline":
+      "Conserto, manutenção e preparação de UTVs e veículos de alta performance.",
     "footer.navTitle": "Navegação",
     "footer.contactTitle": "Contato",
     "footer.rights": "Todos os direitos reservados.",
-    "footer.dev": "Desenvolvido por Gabriel Sampaio"
+    "footer.dev": "Desenvolvido por Gabriel Sampaio",
   },
 
   en: {
@@ -117,6 +129,17 @@ export const translations = {
     "hero.ctaServices": "See our services",
     "hero.ctaContact": "Get in touch",
 
+    "contact.cardLabel": "CONTACT OUR TEAM",
+    "contact.backToFront": "Back to presentation",
+    "contact.address": "Address",
+    "contact.addressDescription": "Find our workshop",
+    "contact.whatsapp": "WhatsApp",
+    "contact.whatsappDescription": "Request a quote",
+    "contact.instagram": "Instagram",
+    "contact.instagramDescription": "Projects and behind the scenes",
+    "contact.email": "Email",
+    "contact.emailDescription": "Professional inquiries",
+
     "about.title": "About us",
     "about.p1":
       "Máximo Motorsport was born from hands-on motorsport experience and a passion for high-performance vehicles.",
@@ -128,7 +151,8 @@ export const translations = {
       "10+ years of motorsport experience, competing in Baja, Rally dos Sertões, Regularity Rally, Dirt Speed (Velocidade na Terra), Stock Car, Formula 4, Porsche Cup and other categories.",
     "about.videoFallback": "Your browser does not support video playback.",
 
-    "gallery.intro": "Check out some examples of projects completed by our team.",
+    "gallery.intro":
+      "Check out some examples of projects completed by our team.",
     "gallery.utvTitle": "UTVs",
     "gallery.utvAlt": "UTV prepared by Máximo Motorsport — project {n}",
     "gallery.vehiclesTitle": "High-performance vehicles",
@@ -173,14 +197,16 @@ export const translations = {
     "modal.close": "Close image",
     "modal.alt": "Enlarged image",
 
-    "footer.tagline": "Repair, maintenance and tuning for UTVs and high-performance vehicles.",
+    "footer.tagline":
+      "Repair, maintenance and tuning for UTVs and high-performance vehicles.",
     "footer.navTitle": "Navigation",
     "footer.contactTitle": "Contact",
     "footer.rights": "All rights reserved.",
-    "footer.dev": "Developed by Gabriel Sampaio"
+    "footer.dev": "Developed by Gabriel Sampaio",
   },
   it: {
-    "meta.title": "Máximo Motorsport | Preparazione e Manutenzione Automobilistica",
+    "meta.title":
+      "Máximo Motorsport | Preparazione e Manutenzione Automobilistica",
     "meta.description":
       "Máximo Motorsport — manutenzione, preparazione e progetti automobilistici personalizzati, con esperienza nel motorsport e nelle alte prestazioni.",
     "meta.ogDescription":
@@ -205,6 +231,17 @@ export const translations = {
       "Soluzioni automobilistiche pensate per chi cerca prestazioni, affidabilità e finiture di alto livello.",
     "hero.ctaServices": "Scopri i nostri servizi",
     "hero.ctaContact": "Contattaci",
+
+    "contact.cardLabel": "CONTATTA IL NOSTRO TEAM",
+    "contact.backToFront": "Torna alla presentazione",
+    "contact.address": "Indirizzo",
+    "contact.addressDescription": "Come raggiungere l'officina",
+    "contact.whatsapp": "WhatsApp",
+    "contact.whatsappDescription": "Richiedi un preventivo",
+    "contact.instagram": "Instagram",
+    "contact.instagramDescription": "Progetti e retroscena",
+    "contact.email": "E-mail",
+    "contact.emailDescription": "Contatti professionali",
 
     "about.title": "Chi siamo",
     "about.p1":
@@ -263,11 +300,12 @@ export const translations = {
     "modal.close": "Chiudi immagine",
     "modal.alt": "Immagine ingrandita",
 
-    "footer.tagline": "Riparazione, manutenzione e preparazione di UTV e veicoli ad alte prestazioni.",
+    "footer.tagline":
+      "Riparazione, manutenzione e preparazione di UTV e veicoli ad alte prestazioni.",
     "footer.navTitle": "Navigazione",
     "footer.contactTitle": "Contatti",
     "footer.rights": "Tutti i diritti riservati.",
-    "footer.dev": "Sviluppato da Gabriel Sampaio"
+    "footer.dev": "Sviluppato da Gabriel Sampaio",
   },
 
   ko: {
@@ -297,6 +335,17 @@ export const translations = {
     "hero.ctaServices": "서비스 알아보기",
     "hero.ctaContact": "문의하기",
 
+    "contact.cardLabel": "팀에 문의하기",
+    "contact.backToFront": "소개 화면으로 돌아가기",
+    "contact.address": "주소",
+    "contact.addressDescription": "정비소 찾아오는 길",
+    "contact.whatsapp": "WhatsApp",
+    "contact.whatsappDescription": "견적 문의하기",
+    "contact.instagram": "Instagram",
+    "contact.instagramDescription": "프로젝트 및 작업 현장",
+    "contact.email": "이메일",
+    "contact.emailDescription": "업무 관련 문의",
+
     "about.title": "회사 소개",
     "about.p1":
       "Máximo Motorsport는 모터스포츠 현장에서 쌓은 실무 경험과 고성능 차량에 대한 열정으로 시작되었습니다.",
@@ -306,10 +355,10 @@ export const translations = {
       "레이싱 경험과 기계 기술, 세심한 디테일 관리를 결합하여 성능과 신뢰성, 안전성을 추구합니다.",
     "about.p4":
       "10년 이상의 모터스포츠 경력을 보유하고 있으며 Baja, Rally dos Sertões, 정규도 랠리, 오프로드 스피드 경기, Stock Car, Formula 4, Porsche Cup 등 다양한 대회 및 종목에서 경험을 쌓았습니다.",
-    "about.videoFallback": "사용 중인 브라우저는 동영상 재생을 지원하지 않습니다.",
+    "about.videoFallback":
+      "사용 중인 브라우저는 동영상 재생을 지원하지 않습니다.",
 
-    "gallery.intro":
-      "저희 팀이 진행한 프로젝트의 일부 사례를 확인해 보세요.",
+    "gallery.intro": "저희 팀이 진행한 프로젝트의 일부 사례를 확인해 보세요.",
     "gallery.utvTitle": "UTV",
     "gallery.utvAlt": "Máximo Motorsport에서 튜닝한 UTV — 프로젝트 {n}",
     "gallery.vehiclesTitle": "고성능 차량",
@@ -330,8 +379,7 @@ export const translations = {
 
     "why.title": "왜 Máximo를 선택해야 할까요?",
     "why.exp.title": "경험",
-    "why.exp.text":
-      "오랜 경험과 전문 기술을 모든 프로젝트에 적용합니다.",
+    "why.exp.text": "오랜 경험과 전문 기술을 모든 프로젝트에 적용합니다.",
     "why.quality.title": "품질",
     "why.quality.text":
       "세부 사항까지 꼼꼼하게 살펴 일관된 품질의 결과를 제공합니다.",
@@ -358,7 +406,7 @@ export const translations = {
     "footer.navTitle": "바로가기",
     "footer.contactTitle": "문의",
     "footer.rights": "모든 권리 보유.",
-    "footer.dev": "Gabriel Sampaio 제작"
+    "footer.dev": "Gabriel Sampaio 제작",
   },
 
   ja: {
@@ -388,6 +436,17 @@ export const translations = {
     "hero.ctaServices": "サービスを見る",
     "hero.ctaContact": "お問い合わせ",
 
+    "contact.cardLabel": "チームにお問い合わせ",
+    "contact.backToFront": "紹介画面に戻る",
+    "contact.address": "所在地",
+    "contact.addressDescription": "整備工場へのアクセス",
+    "contact.whatsapp": "WhatsApp",
+    "contact.whatsappDescription": "お見積もりを依頼する",
+    "contact.instagram": "Instagram",
+    "contact.instagramDescription": "プロジェクトと作業風景",
+    "contact.email": "メール",
+    "contact.emailDescription": "お問い合わせ",
+
     "about.title": "私たちについて",
     "about.p1":
       "Máximo Motorsportは、モータースポーツの現場で培った実践的な経験と、高性能車への情熱から生まれました。",
@@ -402,7 +461,8 @@ export const translations = {
     "gallery.intro":
       "私たちのチームが手がけたプロジェクトの一部をご覧ください。",
     "gallery.utvTitle": "UTV",
-    "gallery.utvAlt": "Máximo MotorsportがチューニングしたUTV — プロジェクト {n}",
+    "gallery.utvAlt":
+      "Máximo MotorsportがチューニングしたUTV — プロジェクト {n}",
     "gallery.vehiclesTitle": "高性能車",
     "gallery.vehiclesAlt": "高性能車 — プロジェクト {n}",
 
@@ -449,10 +509,9 @@ export const translations = {
     "footer.navTitle": "ナビゲーション",
     "footer.contactTitle": "お問い合わせ",
     "footer.rights": "無断転載・複製を禁じます。",
-    "footer.dev": "Gabriel Sampaio 制作"
+    "footer.dev": "Gabriel Sampaio 制作",
   },
 };
-
 
 export const SUPPORTED_LANGS = ["pt", "en", "it", "ko", "ja"];
 export const DEFAULT_LANG = "pt";
