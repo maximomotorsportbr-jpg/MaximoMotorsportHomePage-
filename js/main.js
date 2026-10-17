@@ -388,6 +388,32 @@ function setupImageModal() {
   });
 }
 
+
+const businessCard = document.querySelector("#business-card");
+
+if (businessCard) {
+  const flipButtons = businessCard.querySelectorAll("[data-flip-card]");
+  const front = businessCard.querySelector(".business-card__front");
+  const back = businessCard.querySelector(".business-card__back");
+
+  function setFlipped(flipped) {
+    businessCard.classList.toggle("is-flipped", flipped);
+
+    front.setAttribute("aria-hidden", String(flipped));
+    back.setAttribute("aria-hidden", String(!flipped));
+
+    front.inert = flipped;
+    back.inert = !flipped;
+  }
+
+  flipButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      setFlipped(!businessCard.classList.contains("is-flipped"));
+    });
+  });
+}
+
+
 /* =========================================================
    INICIALIZAÇÃO
    ========================================================= */

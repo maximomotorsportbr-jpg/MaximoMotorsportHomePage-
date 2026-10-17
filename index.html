@@ -49,6 +49,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Work+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
 
     <!-- CSS -->
     <link rel="stylesheet" href="./css/main.css" />
@@ -75,39 +77,144 @@
                 <source src="assets/video/2-web-mobile.mp4" type="video/mp4" />
             </video>
 
+
             <div class="container hero-grid">
-                <div class="metallic-card">
-                    <p class="hero-eyebrow" data-i18n="hero.eyebrow">Especializada em UTVs</p>
-                    <h1 id="hero-titulo">Máximo Motorsport</h1>
+                <div class="business-card" id="business-card">
+                    <div class="business-card__inner">
 
-                    <p class="hero-subtitle" data-i18n="hero.subtitle">CONSERTO • MANUTENÇÃO • PREPARAÇÃO</p>
+                        <!-- FRENTE DO CARTÃO -->
+                        <article class="business-card__face business-card__front" aria-labelledby="hero-titulo">
+                            <!-- Conteúdo principal -->
+                            <div class="business-card__front-content">
 
-                    <p data-i18n="hero.text">
-                        Soluções automotivas desenvolvidas para quem busca desempenho,
-                        confiabilidade e acabamento de alto nível.
-                    </p>
+                                <p class="hero-eyebrow" data-i18n="hero.eyebrow">
+                                    Especializada em UTVs
+                                </p>
 
-                    <div>
-                        <a href="#servicos" class="metallic-button" data-i18n="hero.ctaServices">Conheça nossos
-                            serviços</a>
+                                <h1 id="hero-titulo">
+                                    Máximo Motorsport
+                                </h1>
 
-                        <a href="#contato" class="metallic-button" data-i18n="hero.ctaContact">Entre em contato</a>
+                                <p class="hero-subtitle" data-i18n="hero.subtitle">
+                                    CONSERTO · MANUTENÇÃO · PREPARAÇÃO
+                                </p>
 
-                        <!-- Os href de Instagram/WhatsApp são definidos em js/main.js (CONFIG) -->
-                        <a href="#" class="instagram-button metallic-button" target="_blank"
-                            rel="noopener noreferrer">
-                            <img src="assets/icon/instagram.svg" alt="" width="16" height="16" />
-                            Instagram
-                        </a>
+                                <p data-i18n="hero.text">
+                                    Soluções automotivas desenvolvidas para quem busca
+                                    desempenho, confiabilidade e acabamento de alto nível.
+                                </p>
 
-                        <a href="#" class="whatsapp-button metallic-button" target="_blank"
-                            rel="noopener noreferrer">
-                            <img src="assets/icon/whatsapp.svg" alt="" width="16" height="16" />
-                            WhatsApp
-                        </a>
+                                <a href="#servicos" class="metallic-button" data-i18n="hero.ctaServices">
+                                    Conheça nossos serviços
+                                </a>
+
+                            </div>
+
+                            <!-- ÚNICO ÍCONE PARA VIRAR O CARTÃO -->
+                            <button class="business-card__flip" type="button" data-flip-card
+                                aria-label="Virar cartão e ver contatos" aria-controls="business-card-back">
+                                <span aria-hidden="true">↷</span>
+                            </button>
+
+                            <!-- Identificação da face -->
+                            <span class="business-card__index">
+                                01 / 02
+                            </span>
+                        </article>
+
+
+                        <!-- VERSO DO CARTÃO -->
+                        <article class="business-card__face business-card__back" id="business-card-back"
+                            aria-label="Informações de contato" aria-hidden="true" inert>
+
+                            <!-- Cabeçalho -->
+                            <div class="business-card__back-header">
+
+                                <span class="business-card__mark">
+                                    MM
+                                </span>
+
+                                <span class="business-card__label">
+                                    FALE COM A EQUIPE
+                                </span>
+
+                                <!-- Ícone para retornar à frente -->
+                                <button class="business-card__close" type="button" data-flip-card
+                                    aria-label="Voltar à apresentação">
+                                    <span aria-hidden="true">↶</span>
+                                </button>
+
+                            </div>
+
+
+                            <!-- CONTATOS -->
+                            <div class="business-card__contact">
+
+                                <!-- Endereço -->
+                                <!-- Endereço -->
+                                <a href="#contato" class="business-card__contact-item">
+                                    <span class="business-card__icon" aria-hidden="true">
+                                        <i class="bi bi-geo-alt"></i>
+                                    </span>
+                                    <span>
+                                        <strong>Endereço</strong>
+                                        <small>Como chegar à oficina</small>
+                                    </span>
+                                    <span aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
+                                </a>
+
+                                <!-- WhatsApp -->
+                                <a href="#" class="business-card__contact-item whatsapp-button" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <span class="business-card__icon" aria-hidden="true">
+                                        <i class="bi bi-whatsapp"></i>
+                                    </span>
+                                    <span>
+                                        <strong>WhatsApp</strong>
+                                        <small>Solicite um orçamento</small>
+                                    </span>
+                                    <span aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
+                                </a>
+
+                                <!-- Instagram -->
+                                <a href="#" class="business-card__contact-item instagram-button" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <span class="business-card__icon" aria-hidden="true">
+                                        <i class="bi bi-instagram"></i>
+                                    </span>
+                                    <span>
+                                        <strong>Instagram</strong>
+                                        <small>Projetos e bastidores</small>
+                                    </span>
+                                    <span aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
+                                </a>
+
+                                <!-- E-mail -->
+                                <a href="mailto:seuemail@email.com" class="business-card__contact-item email-button">
+                                    <span class="business-card__icon" aria-hidden="true">
+                                        <i class="bi bi-envelope"></i>
+                                    </span>
+                                    <span>
+                                        <strong>E-mail</strong>
+                                        <small>Contato profissional</small>
+                                    </span>
+                                    <span aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
+                                </a>
+
+                            </div>
+
+                            <!-- Rodapé -->
+                            <div class="business-card__back-footer">
+                                <span>MÁXIMO MOTORSPORT</span>
+                                <span>02 / 02</span>
+                            </div>
+
+                        </article>
+
                     </div>
                 </div>
             </div>
+
         </section>
 
         <!-- ================= SOBRE ================= -->
