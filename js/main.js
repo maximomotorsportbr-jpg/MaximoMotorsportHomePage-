@@ -1,4 +1,9 @@
-import { translations, SUPPORTED_LANGS, DEFAULT_LANG, LANGUAGE_OPTIONS } from "./translations.js";
+import {
+  translations,
+  SUPPORTED_LANGS,
+  DEFAULT_LANG,
+  LANGUAGE_OPTIONS,
+} from "./translations.js";
 import { createDropdown } from "./dropdown.js";
 
 /* =========================================================
@@ -10,8 +15,8 @@ const CONFIG = {
   instagramHandle: "",
   whatsappNumber: "5511966230194",
   email: "maximomotorsportbr@gmail.com",
+  endereco: "Piracicaba - SP"
 };
-
 
 const STORAGE = { theme: "mm-theme", lang: "mm-lang" };
 const THEMES = ["dark", "light"];
@@ -30,37 +35,46 @@ const ICON_GLOBE =
 const ICON_CONTRAST =
   '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg>';
 
-
 /* =========================================================
    ESTADO + ARMAZENAMENTO (com try/catch: pode estar bloqueado)
    ========================================================= */
 
-
 const store = {
   get(key) {
-    try { return localStorage.getItem(key); } catch { return null; }
+    try {
+      return localStorage.getItem(key);
+    } catch {
+      return null;
+    }
   },
   set(key, value) {
-    try { localStorage.setItem(key, value); } catch { /* ignora */ }
+    try {
+      localStorage.setItem(key, value);
+    } catch {
+      /* ignora */
+    }
   },
 };
 
 const state = {
-  theme: THEMES.includes(store.get(STORAGE.theme)) ? store.get(STORAGE.theme) : "dark",
-  lang: SUPPORTED_LANGS.includes(store.get(STORAGE.lang)) ? store.get(STORAGE.lang) : DEFAULT_LANG,
+  theme: THEMES.includes(store.get(STORAGE.theme))
+    ? store.get(STORAGE.theme)
+    : "dark",
+  lang: SUPPORTED_LANGS.includes(store.get(STORAGE.lang))
+    ? store.get(STORAGE.lang)
+    : DEFAULT_LANG,
 };
 
 let themeDropdown = null;
 let langDropdown = null;
 
-
-
 /* =========================================================
    TRADUÇÃO
    ========================================================= */
-   
+
 function t(key, vars = {}) {
-  const text = translations[state.lang]?.[key] ?? translations[DEFAULT_LANG][key] ?? key;
+  const text =
+    translations[state.lang]?.[key] ?? translations[DEFAULT_LANG][key] ?? key;
   return text.replace(/\{(\w+)\}/g, (_, name) => vars[name] ?? "");
 }
 
@@ -85,7 +99,8 @@ function applyTranslations(root = document) {
   document.title = t("meta.title");
 
   const locale = document.querySelector('meta[property="og:locale"]');
-  if (locale) locale.setAttribute("content", state.lang === "pt" ? "pt_BR" : "en_US");
+  if (locale)
+    locale.setAttribute("content", state.lang === "pt" ? "pt_BR" : "en_US");
 }
 
 function setLang(lang) {
@@ -96,7 +111,6 @@ function setLang(lang) {
   setupContactLinks();
   langDropdown?.setValue(lang);
 }
-
 
 /* =========================================================
    TEMA
@@ -113,7 +127,6 @@ function setTheme(theme) {
 
   themeDropdown?.setValue(theme);
 }
-
 
 /* =========================================================
    HEADER
@@ -134,7 +147,7 @@ function buildHeader() {
 
         <ul class="navbar__links">
           ${NAV_LINKS.map(
-            (l) => `<li><a href="${l.href}" data-i18n="${l.key}"></a></li>`
+            (l) => `<li><a href="${l.href}" data-i18n="${l.key}"></a></li>`,
           ).join("")}
         </ul>
 
@@ -173,7 +186,10 @@ function trackHeaderHeight() {
   if (!header) return;
 
   const update = () => {
-    document.documentElement.style.setProperty("--header-height", `${header.offsetHeight}px`);
+    document.documentElement.style.setProperty(
+      "--header-height",
+      `${header.offsetHeight}px`,
+    );
   };
   update();
 
@@ -187,7 +203,10 @@ function trackActiveSection() {
 
   const sectionToLink = { "galeria-veiculos": "galeria-utv" };
   const links = new Map(
-    [...document.querySelectorAll(".navbar__links a")].map((a) => [a.getAttribute("href").slice(1), a])
+    [...document.querySelectorAll(".navbar__links a")].map((a) => [
+      a.getAttribute("href").slice(1),
+      a,
+    ]),
   );
 
   const observer = new IntersectionObserver(
@@ -201,11 +220,13 @@ function trackActiveSection() {
         });
       });
     },
-    { rootMargin: "-40% 0px -55% 0px" }
+    { rootMargin: "-40% 0px -55% 0px" },
   );
 
   document
-    .querySelectorAll("#hero, #sobre, #galeria-utv, #galeria-veiculos, #servicos, #diferenciais, #contato")
+    .querySelectorAll(
+      "#hero, #sobre, #galeria-utv, #galeria-veiculos, #servicos, #diferenciais, #contato",
+    )
     .forEach((s) => observer.observe(s));
 }
 
@@ -219,25 +240,43 @@ function buildFooter() {
 
   footer.classList.add("footer");
 
-  const contactItems = [
-    `<li><a href="#" data-social="instagram" target="_blank" rel="noopener noreferrer">Instagram ${CONFIG.instagramHandle}</a></li>`,
-  ];
-  if (CONFIG.whatsappNumber) {
-    contactItems.push(
-      `<li><a href="#" data-social="whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>`
-    );
-  }
-  if (CONFIG.email) {
-    contactItems.push(`<li><a href="#" data-social="email">${CONFIG.email}</a></li>`);
-  }
+const contactItems = [];
+
+if (CONFIG.whatsappNumber) {
+  contactItems.push(
+    `<li><a href="#" data-social="whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>`
+  );
+}
+
+if (CONFIG.email) {
+  contactItems.push(
+    `<li><a href="#" data-social="email">E-mail</a></li>`
+  );
+}
+
+if (CONFIG.endereco) {
+  contactItems.push(
+    `<li><a href="#" data-social="endereco">Endereço</a></li>`
+  );
+}
+
+const redesItems = [];
+if (CONFIG.instagramUrl) {
+  redesItems.push(
+    `<li><a href="#" data-social="instagran" target="_blank" rel="noopener noreferrer">Instagran</a></li>`
+  );
+}
 
   footer.innerHTML = `
     <div class="container">
       <div class="footer__content">
         <div class="footer__brand">
-          <img src="assets/img/logo.svg" width="120" height="120" loading="lazy" decoding="async"
-               data-i18n-alt="ui.logoAlt" alt="" />
-          <p data-i18n="footer.tagline"></p>
+          <div>
+          <a class="brand" href="index.html" aria-label="Máximo Motorsport">
+            <span class="brand__mark" aria-hidden="true">MM</span><span>Máximo Motorsport</span>
+          </a>
+          <p class="footer-tagline" data-i18n="footer.tagline">${t("footer.tagline")}</p>
+          </div>      
         </div>
 
         <nav class="footer__column" aria-labelledby="footer-nav-title">
@@ -250,6 +289,11 @@ function buildFooter() {
         <div class="footer__column">
           <h3 data-i18n="footer.contactTitle"></h3>
           <ul class="footer__list">${contactItems.join("")}</ul>
+        </div>
+
+        <div class="footer__column">
+          <h3 data-i18n="footer.contactRedes"></h3>
+          <ul class="footer__list">${redesItems.join("")}</ul>
         </div>
       </div>
 
@@ -286,7 +330,9 @@ function setupContactLinks() {
     .querySelectorAll(".instagram-button, [data-social='instagram']")
     .forEach((a) => (a.href = CONFIG.instagramUrl));
 
-  const whatsapp = document.querySelectorAll(".whatsapp-button, [data-social='whatsapp']");
+  const whatsapp = document.querySelectorAll(
+    ".whatsapp-button, [data-social='whatsapp']",
+  );
   if (CONFIG.whatsappNumber) {
     const url = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(t("contact.whatsappMessage"))}`;
     whatsapp.forEach((a) => {
@@ -297,7 +343,9 @@ function setupContactLinks() {
   } else {
     whatsapp.forEach(disableLink);
     if (!setupContactLinks.warned) {
-      console.warn("[Máximo Motorsport] Defina CONFIG.whatsappNumber em js/main.js para ativar o WhatsApp.");
+      console.warn(
+        "[Máximo Motorsport] Defina CONFIG.whatsappNumber em js/main.js para ativar o WhatsApp.",
+      );
       setupContactLinks.warned = true;
     }
   }
@@ -321,7 +369,9 @@ function setupCarousels() {
 
     const clone = groups[0].cloneNode(true);
     clone.setAttribute("aria-hidden", "true");
-    clone.querySelectorAll("a, button, [tabindex]").forEach((el) => el.setAttribute("tabindex", "-1"));
+    clone
+      .querySelectorAll("a, button, [tabindex]")
+      .forEach((el) => el.setAttribute("tabindex", "-1"));
     carousel.append(clone);
   });
 }
@@ -388,7 +438,6 @@ function setupImageModal() {
   });
 }
 
-
 const businessCard = document.querySelector("#business-card");
 
 if (businessCard) {
@@ -412,7 +461,6 @@ if (businessCard) {
     });
   });
 }
-
 
 /* =========================================================
    INICIALIZAÇÃO
