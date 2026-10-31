@@ -7,7 +7,7 @@ import {
 import { createDropdown } from "./dropdown.js";
 
 /* =========================================================
-   CONFIGURAÇÃO — edite aqui os dados de contato
+   CONFIGURAÇÃO 
    ========================================================= */
 
 const CONFIG = {
@@ -240,43 +240,41 @@ function buildFooter() {
 
   footer.classList.add("footer");
 
-const contactItems = [];
+  const contactItems = [];
 
-if (CONFIG.whatsappNumber) {
-  contactItems.push(
-    `<li><a href="#" data-social="whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>`
-  );
-}
+  if (CONFIG.whatsappNumber) {
+    contactItems.push(
+      `<li><a href="#" data-social="whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>`,
+    );
+  }
 
-if (CONFIG.email) {
-  contactItems.push(
-    `<li><a href="#" data-social="email">E-mail</a></li>`
-  );
-}
+  if (CONFIG.email) {
+    contactItems.push(`<li><a href="#" data-social="email">E-mail</a></li>`);
+  }
 
-if (CONFIG.endereco) {
-  contactItems.push(
-    `<li><a href="#" data-social="endereco">Endereço</a></li>`
-  );
-}
+  if (CONFIG.endereco) {
+    contactItems.push(
+      `<li><a href="#" data-social="endereco">Endereço</a></li>`,
+    );
+  }
 
-const redesItems = [];
-if (CONFIG.instagramUrl) {
-  redesItems.push(
-    `<li><a href="#" data-social="instagran" target="_blank" rel="noopener noreferrer">Instagran</a></li>`
-  );
-}
+  const redesItems = [];
+  if (CONFIG.instagramUrl) {
+    redesItems.push(
+      `<li><a href="#" data-social="instagram" target="_blank" rel="noopener noreferrer">Instagram</a></li>`,
+    );
+  }
 
   footer.innerHTML = `
     <div class="container">
       <div class="footer__content">
         <div class="footer__brand">
           <div>
-          <a class="brand" href="index.html" aria-label="Máximo Motorsport">
-            <span class="brand__mark" aria-hidden="true">MM</span><span>Máximo Motorsport</span>
-          </a>
-          <p class="footer-tagline" data-i18n="footer.tagline">${t("footer.tagline")}</p>
-          </div>      
+            <a class="brand" href="index.html" aria-label="Máximo Motorsport">
+              <span class="brand__mark" aria-hidden="true">MM</span><span>Máximo Motorsport</span>
+            </a>
+            <p class="footer-tagline" data-i18n="footer.tagline">${t("footer.tagline")}</p>
+          </div>
         </div>
 
         <nav class="footer__column" aria-labelledby="footer-nav-title">
@@ -299,14 +297,13 @@ if (CONFIG.instagramUrl) {
 
       <p class="footer__copyright">
         © ${new Date().getFullYear()} Máximo Motorsport <span data-i18n="footer.rights"></span>
-         <a
-           href="https://www.linkedin.com/in/gabriel-sampaio0122/"
-            target="_blank"
-            rel="noopener noreferrer">
-              <span data-i18n="footer.dev">
-          </a>
+        <a
+          href="https://www.linkedin.com/in/gabriel-sampaio0122/"
+          target="_blank"
+          rel="noopener noreferrer">
+          <span data-i18n="footer.dev"></span>
+        </a>
       </p>
-      
     </div>`;
 }
 
@@ -377,6 +374,111 @@ function setupCarousels() {
 }
 
 /* =========================================================
+   GALERIA — visualizador (UTVs) e entrada suave (Veículos)
+   ========================================================= */
+
+/** Visualizador: foto grande + miniaturas, setas e teclado. */
+function setupViewers() {
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  document.querySelectorAll("[data-viewer]").forEach((viewer) => {
+    const stageImg = viewer.querySelector(".viewer__stage img");
+    const count = viewer.querySelector(".viewer__count");
+    const list = viewer.querySelector(".viewer__thumbs");
+    const thumbs = [...viewer.querySelectorAll(".viewer__thumbs button")];
+    const altKey = viewer.dataset.altKey;
+    if (!stageImg || !count || !list || !thumbs.length) return;
+
+    const pad = (n) => String(n).padStart(2, "0");
+    let index = 0;
+    let request = 0; // evita que um clique antigo sobrescreva um mais novo
+
+    /** Centraliza a miniatura só na horizontal (sem rolar a página inteira). */
+    function centerThumb(btn) {
+      const l = list.getBoundingClientRect();
+      const b = btn.getBoundingClientRect();
+      list.scrollBy({
+        left: b.left - l.left - (l.width - b.width) / 2,
+        behavior: reduceMotion ? "auto" : "smooth",
+      });
+    }
+
+    function show(i, { initial = false } = {}) {
+      index = (i + thumbs.length) % thumbs.length;
+      const btn = thumbs[index];
+      const { src, n } = btn.dataset;
+
+      thumbs.forEach((b, k) => {
+        if (k === index) b.setAttribute("aria-current", "true");
+        else b.removeAttribute("aria-current");
+      });
+      count.textContent = `${pad(index + 1)} / ${pad(thumbs.length)}`;
+
+      if (initial) return; // o palco já nasce com a primeira foto
+
+      centerThumb(btn);
+
+      const current = ++request;
+      stageImg.style.opacity = "0";
+
+      const next = new Image();
+      const apply = () => {
+        if (current !== request) return;
+        stageImg.src = src;
+        stageImg.dataset.n = n;
+        if (altKey) stageImg.alt = t(altKey, { n });
+        stageImg.style.opacity = "1";
+      };
+      next.onload = apply;
+      next.onerror = apply;
+      next.src = src;
+    }
+
+    thumbs.forEach((btn, i) => btn.addEventListener("click", () => show(i)));
+    viewer
+      .querySelector("[data-prev]")
+      ?.addEventListener("click", () => show(index - 1));
+    viewer
+      .querySelector("[data-next]")
+      ?.addEventListener("click", () => show(index + 1));
+
+    viewer.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") show(index - 1);
+      if (e.key === "ArrowRight") show(index + 1);
+    });
+
+    show(0, { initial: true });
+  });
+}
+
+/** Entrada suave das fotos da composição editorial ao rolar. */
+function setupReveal() {
+  const items = document.querySelectorAll(".ed");
+  const reduce = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+  if (!items.length || reduce || !("IntersectionObserver" in window)) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-in");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.15 },
+  );
+
+  items.forEach((el) => {
+    el.setAttribute("data-reveal", "");
+    observer.observe(el);
+  });
+}
+
+/* =========================================================
    MODAL DE IMAGEM
    ========================================================= */
 
@@ -405,7 +507,7 @@ function setupImageModal() {
     lastFocused?.focus?.();
   }
 
-  document.querySelectorAll(".galeria-grid img").forEach((img) => {
+  document.querySelectorAll("[data-zoom]").forEach((img) => {
     img.tabIndex = 0;
     img.setAttribute("role", "button");
     img.addEventListener("click", () => open(img));
@@ -472,6 +574,8 @@ function init() {
   buildHeader();
   buildFooter();
   setupCarousels();
+  setupViewers();
+  setupReveal();
   setupImageModal();
 
   applyTranslations();

@@ -273,169 +273,231 @@
             </div>
         </section>
 
-        <!-- ================= GALERIA UTV ================= -->
+        <!-- ================= UTVs — visualizador ================= -->
         <section id="galeria-utv" aria-labelledby="utv-titulo">
             <div class="container">
-                <h2 id="utv-titulo" data-i18n="gallery.utvTitle">UTVs</h2>
+                <header class="galeria__head">
+                    <h2 id="utv-titulo" data-i18n="gallery.utvTitle">UTVs</h2>
+                    <p data-i18n="gallery.utvIntro">Projetos de preparação e manutenção realizados pela nossa equipe.</p>
+                </header>
 
-                <p data-i18n="gallery.intro">Confira alguns exemplos de projetos realizados pela nossa equipe.</p>
+                <div class="viewer" data-viewer data-alt-key="gallery.utvAlt">
+                    <figure class="viewer__stage">
+                        <img src="assets/utv/1.webp" data-n="1" data-zoom data-i18n-alt="gallery.utvAlt"
+                            alt="UTV preparada pela Máximo Motorsport — projeto 1" decoding="async" />
+                        <figcaption class="viewer__bar">
+                            <span class="viewer__count" aria-live="polite">01 / 07</span>
+                            <span class="viewer__nav">
+                                <button type="button" class="viewer__btn" data-prev data-i18n-aria-label="ui.prev"
+                                    aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                                    </svg></button>
+                                <button type="button" class="viewer__btn" data-next data-i18n-aria-label="ui.next"
+                                    aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg></button>
+                            </span>
+                        </figcaption>
+                    </figure>
 
-                <div class="galeria-grid">
-                    <img src="assets/utv/1.webp" data-n="1" data-i18n-alt="gallery.utvAlt"
-                        alt="UTV preparada pela Máximo Motorsport — projeto 1" loading="lazy" decoding="async" />
-                    <img src="assets/utv/2.webp" data-n="2" data-i18n-alt="gallery.utvAlt"
-                        alt="UTV preparada pela Máximo Motorsport — projeto 2" loading="lazy" decoding="async" />
-                    <img src="assets/utv/9.webp" data-n="3" data-i18n-alt="gallery.utvAlt"
-                        alt="UTV preparada pela Máximo Motorsport — projeto 3" loading="lazy" decoding="async" />
-                    <img src="assets/utv/4.webp" data-n="4" data-i18n-alt="gallery.utvAlt"
-                        alt="UTV preparada pela Máximo Motorsport — projeto 4" loading="lazy" decoding="async" />
-                    <img src="assets/utv/5.webp" data-n="5" data-i18n-alt="gallery.utvAlt"
-                        alt="UTV preparada pela Máximo Motorsport — projeto 5" loading="lazy" decoding="async" />
-                    <img src="assets/utv/10.webp" data-n="6" data-i18n-alt="gallery.utvAlt"
-                        alt="UTV preparada pela Máximo Motorsport — projeto 6" loading="lazy" decoding="async" />
-                    <img src="assets/utv/11.webp" data-n="7" data-i18n-alt="gallery.utvAlt"
-                        alt="UTV preparada pela Máximo Motorsport — projeto 7" loading="lazy" decoding="async" />
+                    <ul class="viewer__thumbs">
+                        <li><button type="button" data-src="assets/utv/1.webp" data-n="1"
+                                data-i18n-aria-label="gallery.utvAlt" aria-label="UTV — projeto 1"><img
+                                    src="assets/utv/1.webp" alt="" loading="lazy" decoding="async" /></button></li>
+                        <li><button type="button" data-src="assets/utv/2.webp" data-n="2"
+                                data-i18n-aria-label="gallery.utvAlt" aria-label="UTV — projeto 2"><img
+                                    src="assets/utv/2.webp" alt="" loading="lazy" decoding="async" /></button></li>
+                        <li><button type="button" data-src="assets/utv/9.webp" data-n="3"
+                                data-i18n-aria-label="gallery.utvAlt" aria-label="UTV — projeto 3"><img
+                                    src="assets/utv/9.webp" alt="" loading="lazy" decoding="async" /></button></li>
+                        <li><button type="button" data-src="assets/utv/4.webp" data-n="4"
+                                data-i18n-aria-label="gallery.utvAlt" aria-label="UTV — projeto 4"><img
+                                    src="assets/utv/4.webp" alt="" loading="lazy" decoding="async" /></button></li>
+                        <li><button type="button" data-src="assets/utv/5.webp" data-n="5"
+                                data-i18n-aria-label="gallery.utvAlt" aria-label="UTV — projeto 5"><img
+                                    src="assets/utv/5.webp" alt="" loading="lazy" decoding="async" /></button></li>
+                        <li><button type="button" data-src="assets/utv/10.webp" data-n="6"
+                                data-i18n-aria-label="gallery.utvAlt" aria-label="UTV — projeto 6"><img
+                                    src="assets/utv/10.webp" alt="" loading="lazy" decoding="async" /></button></li>
+                        <li><button type="button" data-src="assets/utv/11.webp" data-n="7"
+                                data-i18n-aria-label="gallery.utvAlt" aria-label="UTV — projeto 7"><img
+                                    src="assets/utv/11.webp" alt="" loading="lazy" decoding="async" /></button></li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- ================= GALERIA VEÍCULOS ================= -->
+        <!-- ================= Veículos — editorial ================= -->
         <section id="galeria-veiculos" aria-labelledby="veiculos-titulo">
             <div class="container">
-                <h2 id="veiculos-titulo" data-i18n="gallery.vehiclesTitle">Veículos de alta performance</h2>
+                <header class="galeria__head">
+                    <h2 id="veiculos-titulo">Veículos de alta performance</h2>
+                    <p>Do carro de rua ao carro de competição, cada projeto é único.</p>
+                </header>
 
-                <p data-i18n="gallery.intro">Confira alguns exemplos de projetos realizados pela nossa equipe.</p>
-
-                <div class="galeria-grid">
-                    <img src="assets/veiculos/1.webp" data-n="1" data-i18n-alt="gallery.vehiclesAlt"
-                        alt="Veículo de alta performance — projeto 1" loading="lazy" decoding="async" />
-                    <img src="assets/veiculos/2.webp" data-n="2" data-i18n-alt="gallery.vehiclesAlt"
-                        alt="Veículo de alta performance — projeto 2" loading="lazy" decoding="async" />
-                    <img src="assets/veiculos/4.webp" data-n="3" data-i18n-alt="gallery.vehiclesAlt"
-                        alt="Veículo de alta performance — projeto 3" loading="lazy" decoding="async" />
-                    <img src="assets/veiculos/3.webp" data-n="4" data-i18n-alt="gallery.vehiclesAlt"
-                        alt="Veículo de alta performance — projeto 4" loading="lazy" decoding="async" />
-                    <img src="assets/veiculos/5.webp" data-n="5" data-i18n-alt="gallery.vehiclesAlt"
-                        alt="Veículo de alta performance — projeto 5" loading="lazy" decoding="async" />
+                <div class="editorial">
+                    <figure class="ed ed--1">
+                        <div class="ed__frame"><img src="assets/veiculos/1.webp" data-zoom
+                                alt="Veículo — projeto 1" loading="lazy" /></div>
+                        <figcaption><span class="ed__num">01</span><span>Projeto 1</span></figcaption>
+                    </figure>
+                    <figure class="ed ed--2">
+                        <div class="ed__frame"><img src="assets/veiculos/2.webp" data-zoom
+                                alt="Veículo — projeto 2" loading="lazy" /></div>
+                        <figcaption><span class="ed__num">02</span><span>Projeto 2</span></figcaption>
+                    </figure>
+                    <figure class="ed ed--3">
+                        <div class="ed__frame"><img src="assets/veiculos/4.webp" data-zoom
+                                alt="Veículo — projeto 3" loading="lazy" /></div>
+                        <figcaption><span class="ed__num">03</span><span>Projeto 3</span></figcaption>
+                    </figure>
+                    <figure class="ed ed--4">
+                        <div class="ed__frame"><img src="assets/veiculos/3.webp" data-zoom
+                                alt="Veículo — projeto 4" loading="lazy" /></div>
+                        <figcaption><span class="ed__num">04</span><span>Projeto 4</span></figcaption>
+                    </figure>
+                    <figure class="ed ed--5">
+                        <div class="ed__frame"><img src="assets/veiculos/5.webp" data-zoom
+                                alt="Veículo — projeto 5" loading="lazy" /></div>
+                        <figcaption><span class="ed__num">05</span><span>Projeto 5</span></figcaption>
+                    </figure>
                 </div>
+
+                <br>   
             </div>
         </section>
+    </main>
 
-        <!-- ================= SERVIÇOS ================= -->
-        <section id="servicos" aria-labelledby="servicos-titulo">
-            <div class="container">
+    <div id="modalImagem" class="modal-imagem" role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+        <span id="fecharModal" class="fechar" role="button" tabindex="0" aria-label="Fechar imagem">&times;</span>
+        <img id="imagemAmpliada" src="" alt="Imagem ampliada" />
+    </div>
+    <!-- ================= SERVIÇOS ================= -->
+ <!-- ================= SERVIÇOS ================= -->
+    <section id="servicos" aria-labelledby="servicos-titulo">
+        <div class="container">
+            <header class="section-head">
                 <h2 id="servicos-titulo" data-i18n="services.title">Nossos serviços</h2>
-
                 <p data-i18n="services.intro">
                     Trabalhamos com diferentes soluções para personalização, manutenção e preparação automotiva.
                 </p>
+            </header>
 
-                <!-- O js/main.js duplica o grupo automaticamente para criar o loop infinito -->
-                <div class="servicos-container">
-                    <div class="carousel">
-                        <div class="group">
-                            <article class="metallic-card">
-                                <h3 data-i18n="services.prep.title">Preparação</h3>
-                                <p data-i18n="services.prep.text">
-                                    Projetos voltados para melhoria de desempenho, resposta e dirigibilidade do veículo.
-                                </p>
-                            </article>
+            <div class="services-grid">
+                <article class="service-card metallic-card">
+                    <span class="service-card__num" aria-hidden="true">01</span>
+                    <span class="icon-box" aria-hidden="true"><i class="bi bi-speedometer2"></i></span>
+                    <h3 data-i18n="services.prep.title">Preparação</h3>
+                    <p data-i18n="services.prep.text">
+                        Projetos voltados para melhoria de desempenho, resposta e dirigibilidade do veículo.
+                    </p>
+                </article>
 
-                            <article class="metallic-card">
-                                <h3 data-i18n="services.maint.title">Manutenção Preventiva</h3>
-                                <p data-i18n="services.maint.text">
-                                    Manutenção preventiva e corretiva com atenção aos detalhes e utilização de
-                                    componentes de qualidade.
-                                </p>
-                            </article>
+                <article class="service-card metallic-card">
+                    <span class="service-card__num" aria-hidden="true">02</span>
+                    <span class="icon-box" aria-hidden="true"><i class="bi bi-shield-check"></i></span>
+                    <h3 data-i18n="services.maint.title">Manutenção Preventiva</h3>
+                    <p data-i18n="services.maint.text">
+                        Manutenção preventiva e corretiva com atenção aos detalhes e utilização de
+                        componentes de qualidade.
+                    </p>
+                </article>
 
-                            <article class="metallic-card">
-                                <h3 data-i18n="services.repair.title">Conserto</h3>
-                                <p data-i18n="services.repair.text">Correção de falhas e problemas mecânicos
-                                    identificados no veículo.</p>
-                            </article>
-                        </div>
-                    </div>
-                </div>
+                <article class="service-card metallic-card">
+                    <span class="service-card__num" aria-hidden="true">03</span>
+                    <span class="icon-box" aria-hidden="true"><i class="bi bi-wrench-adjustable"></i></span>
+                    <h3 data-i18n="services.repair.title">Conserto</h3>
+                    <p data-i18n="services.repair.text">
+                        Correção de falhas e problemas mecânicos identificados no veículo.
+                    </p>
+                </article>
             </div>
-        </section>
 
-        <!-- ================= DIFERENCIAIS ================= -->
-        <section id="diferenciais" aria-labelledby="diferenciais-titulo">
-            <div class="container">
+            <br>
+        </div>
+    </section>
+
+    <!-- ================= DIFERENCIAIS ================= -->
+    <section id="diferenciais" aria-labelledby="diferenciais-titulo">
+        <div class="container">
+            <header class="section-head">
                 <h2 id="diferenciais-titulo" data-i18n="why.title">Por que escolher a Máximo?</h2>
+            </header>
 
-                <div class="servicos-container">
-                    <div class="carousel">
-                        <div class="group">
-                            <article class="metallic-card">
-                                <h3 data-i18n="why.exp.title">Experiência</h3>
-                                <p data-i18n="why.exp.text">Anos de experiência e conhecimento técnico aplicados em
-                                    cada projeto.</p>
-                            </article>
+            <ul class="why-list">
+                <li class="why-item">
+                    <span class="icon-box icon-box--round" aria-hidden="true"><i class="bi bi-trophy"></i></span>
+                    <h3 data-i18n="why.exp.title">Experiência</h3>
+                    <p data-i18n="why.exp.text">Anos de experiência e conhecimento técnico aplicados em cada projeto.</p>
+                </li>
 
-                            <article class="metallic-card">
-                                <h3 data-i18n="why.quality.title">Qualidade</h3>
-                                <p data-i18n="why.quality.text">Trabalhamos com atenção aos detalhes para entregar
-                                    resultados consistentes.</p>
-                            </article>
+                <li class="why-item">
+                    <span class="icon-box icon-box--round" aria-hidden="true"><i class="bi bi-patch-check"></i></span>
+                    <h3 data-i18n="why.quality.title">Qualidade</h3>
+                    <p data-i18n="why.quality.text">Trabalhamos com atenção aos detalhes para entregar resultados consistentes.</p>
+                </li>
 
-                            <article class="metallic-card">
-                                <h3 data-i18n="why.service.title">Atendimento</h3>
-                                <p data-i18n="why.service.text">Atendimento próximo e transparente durante todas as
-                                    etapas do projeto.</p>
-                            </article>
+                <li class="why-item">
+                    <span class="icon-box icon-box--round" aria-hidden="true"><i class="bi bi-chat-dots"></i></span>
+                    <h3 data-i18n="why.service.title">Atendimento</h3>
+                    <p data-i18n="why.service.text">Atendimento próximo e transparente durante todas as etapas do projeto.</p>
+                </li>
 
-                            <article class="metallic-card">
-                                <h3 data-i18n="why.custom.title">Personalização</h3>
-                                <p data-i18n="why.custom.text">Cada projeto é desenvolvido de acordo com as
-                                    necessidades de cada cliente.</p>
-                            </article>
-                        </div>
+                <li class="why-item">
+                    <span class="icon-box icon-box--round" aria-hidden="true"><i class="bi bi-sliders"></i></span>
+                    <h3 data-i18n="why.custom.title">Personalização</h3>
+                    <p data-i18n="why.custom.text">Cada projeto é desenvolvido de acordo com as necessidades de cada cliente.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <br>
+
+
+    <!-- ================= CONTATO ================= -->
+    <section id="contato" aria-labelledby="contato-titulo">
+        <div class="container">
+            <div class="metallic-card contact-banner">
+                <div class="contact-banner__content">
+                    <h2 id="contato-titulo" data-i18n="contact.title">Vamos conversar?</h2>
+
+                    <p data-i18n="contact.text">
+                        Tem um projeto em mente? Entre em contato com nossa equipe
+                        e descubra como podemos ajudar.
+                    </p>
+
+                    <div class="contato-botoes">
+                        <a href="#" class="contact-button whatsapp-button metallic-button" target="_blank"
+                            rel="noopener noreferrer" data-i18n="contact.whatsapp">
+                            Solicitar orçamento pelo WhatsApp
+                        </a>
+
+                        <a href="#" class="contact-button instagram-button metallic-button" target="_blank"
+                            rel="noopener noreferrer">
+                            Instagram
+                        </a>
+
+                        <!-- TODO: defina o e-mail em js/main.js (CONFIG.email); este é só um placeholder -->
+                        <a href="mailto:seuemail@email.com" class="contact-button email-button metallic-button"
+                            data-i18n="contact.email">
+                            E-mail
+                        </a>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- ================= CONTATO ================= -->
-        <section id="contato" aria-labelledby="contato-titulo">
-            <div class="container">
-                <div class="metallic-card contact-banner">
-                    <div class="contact-banner__content">
-                        <h2 id="contato-titulo" data-i18n="contact.title">Vamos conversar?</h2>
-
-                        <p data-i18n="contact.text">
-                            Tem um projeto em mente? Entre em contato com nossa equipe
-                            e descubra como podemos ajudar.
-                        </p>
-
-                        <div class="contato-botoes">
-                            <a href="#" class="contact-button whatsapp-button metallic-button" target="_blank"
-                                rel="noopener noreferrer" data-i18n="contact.whatsapp">
-                                Solicitar orçamento pelo WhatsApp
-                            </a>
-
-                            <a href="#" class="contact-button instagram-button metallic-button" target="_blank"
-                                rel="noopener noreferrer">
-                                Instagram
-                            </a>
-
-                            <!-- TODO: defina o e-mail em js/main.js (CONFIG.email); este é só um placeholder -->
-                            <a href="mailto:seuemail@email.com" class="contact-button email-button metallic-button"
-                                data-i18n="contact.email">
-                                E-mail
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Banner decorativo (horizontal). Troque o arquivo para mudar a arte. -->
-                    <div class="contact-banner__media" aria-hidden="true">
-                        <img src="assets/img/banner-contato.svg" alt="" width="1600" height="640" loading="lazy"
-                            decoding="async" />
-                    </div>
+                <!-- Banner decorativo (horizontal). Troque o arquivo para mudar a arte. -->
+                <div class="contact-banner__media" aria-hidden="true">
+                    <img src="assets/img/banner-contato.svg" alt="" width="1600" height="640" loading="lazy"
+                        decoding="async" />
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+    <br>
     </main>
 
     <!-- Preenchido por js/main.js -->
