@@ -663,7 +663,7 @@ section h2 { margin-bottom: 20px; color: var(--color-text); font-size: clamp(1.6
 
 /* 16. RESPONSIVIDADE */
 @media (max-width: 1000px) {
-  .footer__content { grid-template-columns: 1fr 1fr; }
+  .footer__content { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px;}
   .footer__brand { grid-column: 1 / -1; }
 }
 
