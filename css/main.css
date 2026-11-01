@@ -635,19 +635,25 @@ section h2 { margin-bottom: 20px; color: var(--color-text); font-size: clamp(1.6
 .dropdown__option[aria-selected="true"] .dropdown__check { visibility: visible; }
 
 /* 14. FOOTER */
-.footer { padding: 50px 0 20px; color: var(--color-text); background: var(--footer-background); border-top: 1px solid var(--color-border); }
+.footer { padding: 20px 0 12px; color: var(--color-text); background: var(--footer-background); border-top: 1px solid var(--color-border); }
 .footer h2, .footer h3 { color: var(--color-text); }
 .footer p { color: var(--color-text-secondary); }
 .footer a:hover { color: var(--color-accent); }
-.footer__content { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 32px; align-items: start; }
+
+.footer__content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: start;
+}
 .footer__brand { display: flex; align-items: center; gap: 18px; }
 .footer__brand img { flex-shrink: 0; width: 96px; height: 96px; }
 .footer__brand p { max-width: 32ch; }
-.footer__column h3 { margin-bottom: 12px; font-size: 1rem; }
+.footer__column h3 { margin-bottom: 8px; font-size: 1rem; }
 .footer__list { display: grid; gap: 8px; list-style: none; }
-.footer__list a { color: var(--color-text-secondary); font-size: .9375rem; }
+.footer__list a { color: var(--color-text-secondary); font-size: .95; }
 .footer__list a:hover { color: var(--color-accent); }
-.footer__copyright { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--color-border); color: var(--color-text-muted); font-size: .875rem; text-align: center; }
+.footer__copyright { margin-top: 40px; padding-top: 10px; border-top: 1px solid var(--color-border); color: var(--color-text-muted); font-size: .875rem; text-align: center; }
 
 /* 15. LINKS E BOTÕES DE CONTATO */
 .skip-link { position: fixed; top: 8px; left: 8px; z-index: 10000; padding: 10px 16px; color: #fff; background: var(--color-accent); border-radius: var(--border-radius-medium); transform: translateY(-200%); transition: transform var(--transition-fast); }
