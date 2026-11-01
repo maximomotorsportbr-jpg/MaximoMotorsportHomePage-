@@ -665,7 +665,7 @@ section h2 { margin-bottom: 20px; color: var(--color-text); font-size: clamp(1.6
   :root { --header-height: 112px; }
   .container { width: min(calc(100% - 30px), 600px); }
   .navbar { justify-content: space-between; }
-  .navbar__links { order: 3; width: 100%; gap: .5em 1.25em; }
+  .navbar__links { order: 3; width: 100%; gap: .5em 1em; }
 
   .hero { min-height: 420px; }
 
@@ -720,9 +720,3 @@ section h2 { margin-bottom: 20px; color: var(--color-text); font-size: clamp(1.6
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
 
-/* 19. IMPRESSÃO */
-@media print {
-  .header, .modal-imagem { display: none !important; }
-  body { color: #000; background: #fff; }
-  main { padding-top: 0; }
-}

@@ -354,24 +354,6 @@ function setupContactLinks() {
   }
 }
 
-/* =========================================================
-   CARROSSEL — duplica o grupo para o loop infinito
-   (assim o HTML não precisa repetir os cards)
-   ========================================================= */
-
-function setupCarousels() {
-  document.querySelectorAll(".carousel").forEach((carousel) => {
-    const groups = carousel.querySelectorAll(".group");
-    if (groups.length !== 1) return;
-
-    const clone = groups[0].cloneNode(true);
-    clone.setAttribute("aria-hidden", "true");
-    clone
-      .querySelectorAll("a, button, [tabindex]")
-      .forEach((el) => el.setAttribute("tabindex", "-1"));
-    carousel.append(clone);
-  });
-}
 
 /* =========================================================
    GALERIA — visualizador (UTVs) e entrada suave (Veículos)
@@ -573,7 +555,6 @@ function init() {
 
   buildHeader();
   buildFooter();
-  setupCarousels();
   setupViewers();
   setupReveal();
   setupImageModal();
